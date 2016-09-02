@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<html>
+	<head>
+
+		<title>{% block title%} {% endblock title %}</title>
+		<link rel ="stylesheet" href="{% static  'css/blog.css'%}">
+	</head>
+
+<body>
+	<div class="page-header">
+		<a href="{% url 'home' %}" class ="top-menu"></a>
+		<h1><a href="/">django Blog</a></h1>
+	</div>
+	{% if user.is_authenticated %}
+		<a href="{% url 'new' %}">
+			<button>New Post</button>
+		 </a>
+	{% endif %}
+	<h1> Welcome to my world </h1>
+	{% block content %}
+{% endblock content %}
+</body>
+</html>
