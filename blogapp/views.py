@@ -6,7 +6,7 @@ from .forms import BlogPostForm
 def homepage(request):
 	blogs=BlogPost.objects.all()
 	context ={'nabin':blogs}
-	template_name='home.html'
+	template_name='index.html'
 	return render(request,template_name,context)
 	#return HttpResponse('<h1>hello nabin kharal</h1>')	
 def details(request,pk):
